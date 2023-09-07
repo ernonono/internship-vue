@@ -1,5 +1,4 @@
-<script>
-</script>
+<script setup lang="ts"></script>
 
 <template>
 <n-space justify="center" class="container-login">
