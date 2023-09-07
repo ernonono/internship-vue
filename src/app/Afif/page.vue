@@ -2,17 +2,7 @@
 meta:
   layout: guest
 </route>
-<script setup lang="ts">
-// export default {
-//   name: 'index',
-//   data() {
-//     return {
-//       login: 'LOGIN',
-//       samping: 'Sekarang',
-//     }
-//   },
-// }
-</script>
+<script setup lang="ts"></script>
 <template>
   <n-space justify="center">
     <n-card>
@@ -35,7 +25,7 @@ meta:
         />
       </n-carousel>
       <n-space justify="center">
-        <h1 class="text-2xl text-center"><b>LOGIN</b></h1>
+        <h1 class="text-2xl text-center">LOGIN</h1>
         <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)">
           <h1 class="text-2xl text-center">Sekarang</h1>
         </n-gradient-text>
