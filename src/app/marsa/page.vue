@@ -5,7 +5,7 @@
   <n-card>
     <n-h2 class="title">Login</n-h2>
     <n-form>
-      <n-input class="input-email" type="email" placeholder="email"></n-input>
+      <n-input class="input-email" type="text" placeholder="email"></n-input>
       <n-input class="input-pw" type="password" placeholder="password" show-password-on="click"></n-input>
     </n-form>
     <n-space>
