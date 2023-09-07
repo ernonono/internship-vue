@@ -2,7 +2,7 @@
 meta:
   layout: guest
 </route>
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="container">
