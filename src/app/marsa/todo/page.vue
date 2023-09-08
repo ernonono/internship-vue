@@ -48,6 +48,7 @@ const onAddTodo = () => {
 
 <style>
 .box {
+  
   position: absolute;
   left: 50%;
   top: 50%;
