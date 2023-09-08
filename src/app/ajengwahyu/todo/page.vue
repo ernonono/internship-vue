@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {ref} from 'vue'
+
 const todos = ref<string[]>([])
 const inputTodo = ref('')
 const activeTab = ref('todo')
