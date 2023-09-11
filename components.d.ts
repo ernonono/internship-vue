@@ -23,16 +23,16 @@ declare module 'vue' {
     NH1: typeof import('naive-ui')['NH1']
     NH4: typeof import('naive-ui')['NH4']
     NInput: typeof import('naive-ui')['NInput']
-<<<<<<< HEAD
+
     NList: typeof import('naive-ui')['NList']
     NListItem: typeof import('naive-ui')['NListItem']
     NSpace: typeof import('naive-ui')['NSpace']
     NTabPane: typeof import('naive-ui')['NTabPane']
     NTabs: typeof import('naive-ui')['NTabs']
-=======
+
     NRow: typeof import('naive-ui')['NRow']
     NSpace: typeof import('naive-ui')['NSpace']
->>>>>>> e9d7e9f1e06208e7387c971354c097eefc31bec0
+
     NText: typeof import('naive-ui')['NText']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
