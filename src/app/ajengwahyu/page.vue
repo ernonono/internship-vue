@@ -1,8 +1,4 @@
-<route lang="yaml">
-    meta:
-        layout: guest
-    </route>
-    <script setup lang="ts">
+<script setup lang="ts">
 
 </script>
 
@@ -35,7 +31,7 @@
                             <n-row :gutter="[0, 24]">
                                 <n-col :span="24"> 
                                     <div style="display: flex; justify-content: flex-end;">
-                                        <router-link to="/counter">
+                                        <router-link to="/ajengwahyu/todo">
                                         <n-button type="primary">
                                             Login
                                         </n-button>
