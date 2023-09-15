@@ -1,11 +1,28 @@
 <script setup lang="ts">
-import { Delete24Regular, CalendarEdit20Regular, CalendarCancel24Regular } from '@vicons/fluent'
+import {
+  Delete24Regular,
+  CalendarEdit20Regular,
+  CalendarCancel24Regular,
+  Save20Regular
+} from '@vicons/fluent'
 const todos = ref<string[]>([])
 
 const input = ref('')
 const activeTab = ref('create')
 const currentTab = ref<'edit' | 'show'>('show')
 const currentId = ref<number | null>(null)
+
+// const cancel = () => {
+//   window.history.back()
+// }
+
+const closeTab = () => {
+  activeTab.value = 'list'
+  currentId.value = null
+}
+const handleClick = () => {
+  activeTab.value = 'create'
+}
 
 const onAddTodo = () => {
   todos.value.push(input.value)
@@ -41,7 +58,7 @@ const removeTodo = (index: number) => {
             <template v-if="todos.length === 0">
               <n-empty description="Belum ada todo">
                 <template #extra>
-                  <n-button tertiary type="primary"> Tambah Todo </n-button>
+                  <n-button tertiary type="primary" @click="handleClick"> Tambah Todo </n-button>
                 </template>
               </n-empty>
             </template>
@@ -53,6 +70,7 @@ const removeTodo = (index: number) => {
                 <template v-else>{{ todo }}</template>
                 <n-space>
                   <n-button
+                    v-if="currentTab === 'show'"
                     class="custom-Button centered-Button"
                     @click="removeTodo(i)"
                     tertiary
@@ -63,6 +81,15 @@ const removeTodo = (index: number) => {
                     </n-icon>
                     Hapus
                   </n-button>
+                  <n-button
+                    v-else
+                    class="custom-Button centered-Button"
+                    @click="closeTab"
+                    tertiary
+                    type="warning"
+                  >
+                    <n-icon size="20"> <save20-regular /> </n-icon>Cancel</n-button
+                  >
                   <div>
                     <n-button
                       v-if="currentTab === 'show'"
@@ -81,6 +108,7 @@ const removeTodo = (index: number) => {
                       </n-icon>
                       Edit
                     </n-button>
+
                     <n-button
                       v-else
                       class="custom-Button centered-Button"
@@ -88,7 +116,7 @@ const removeTodo = (index: number) => {
                       tertiary
                       type="warning"
                     >
-                      <n-icon size="20"> <calendar-cancel24-regular /> </n-icon>Cancel</n-button
+                      <n-icon size="20"> <save20-regular /> </n-icon>Save</n-button
                     >
                   </div>
                 </n-space>
