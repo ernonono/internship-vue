@@ -2,7 +2,7 @@
 import { useHttp } from '@/composables/http/http'
 
 const router = useRouter()
-const { data } = useHttp('http://reqres.in/api/users')
+const { data } = useHttp('https://reqres.in/api/users')
 </script>
 <template>
   <div v-for="user in data?.data" :key="user.id" @click="router.push(`/afif/users/${user.id}`)">
