@@ -3,6 +3,8 @@ const todos = ref<string[]>([])
 
 const input = ref('')
 const activeTab = ref('create')
+const currentTab = ref<'edit' | 'show'>('show')
+const currentId = ref<number | null>(null)
 
 const onAddTodo = () => {
   todos.value.push(input.value)
@@ -36,7 +38,24 @@ const onAddTodo = () => {
                 </n-empty>
               </template>
               <n-list-item v-for="(todo, i) in todos" :key="i" hoverable>
-                {{ todo }}
+                <div v-if="i === currentId && currentTab === 'edit'">
+                  <n-input v-model:value="todos[i]"></n-input>
+                </div>
+                <template v-else>{{ todo }}</template>
+                <template #suffix>
+                  <n-button
+                    v-if="currentTab === 'show'"
+                    @click="
+                      () => {
+                        currentTab = 'edit'
+                        currentId = i
+                      }
+                    "
+                  >
+                    Edit
+                  </n-button>
+                  <n-button v-else @click="currentTab = 'show'">Cancel</n-button>
+                </template>
               </n-list-item>
             </n-list>
           </div>
