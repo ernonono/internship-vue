@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const { data } = useHttp(computed(() => `http://reqres.in/api/users/${route.params.id}`))
+const { data } = useHttp(computed(() => `https://reqres.in/api/users/${route.params.id}`))
 </script>
 
 <template>
